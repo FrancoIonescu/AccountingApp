@@ -1,0 +1,12 @@
+D:\Proiecte\C#\Contabilitate\bin\Debug\Contabilitate.exe.config
+D:\Proiecte\C#\Contabilitate\bin\Debug\Contabilitate.exe
+D:\Proiecte\C#\Contabilitate\bin\Debug\Contabilitate.pdb
+D:\Proiecte\C#\Contabilitate\obj\Debug\Contabilitate.csproj.AssemblyReference.cache
+D:\Proiecte\C#\Contabilitate\obj\Debug\Contabilitate.Properties.Resources.resources
+D:\Proiecte\C#\Contabilitate\obj\Debug\Contabilitate.csproj.GenerateResource.cache
+D:\Proiecte\C#\Contabilitate\obj\Debug\Contabilitate.csproj.CoreCompileInputs.cache
+D:\Proiecte\C#\Contabilitate\obj\Debug\Contabilitate.exe
+D:\Proiecte\C#\Contabilitate\obj\Debug\Contabilitate.pdb
+D:\Proiecte\C#\Contabilitate\obj\Debug\Contabilitate.Bilant.resources
+D:\Proiecte\C#\Contabilitate\obj\Debug\Contabilitate.Menu.resources
+D:\Proiecte\C#\Contabilitate\obj\Debug\Contabilitate.CPP.resources
