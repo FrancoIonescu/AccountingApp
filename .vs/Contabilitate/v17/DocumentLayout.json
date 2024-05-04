@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Proiecte\\C#\\Contabilitate\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AB61E268-1E60-45EE-9BA2-CBDD26075899}|Contabilitate.csproj|D:\\Proiecte\\C#\\Contabilitate\\cpp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AB61E268-1E60-45EE-9BA2-CBDD26075899}|Contabilitate.csproj|solutionrelative:cpp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AB61E268-1E60-45EE-9BA2-CBDD26075899}|Contabilitate.csproj|d:\\proiecte\\c#\\contabilitate\\bilant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB61E268-1E60-45EE-9BA2-CBDD26075899}|Contabilitate.csproj|solutionrelative:bilant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,12 +19,8 @@
       "RelativeMoniker": "D:0:0:{AB61E268-1E60-45EE-9BA2-CBDD26075899}|Contabilitate.csproj|solutionrelative:elemente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB61E268-1E60-45EE-9BA2-CBDD26075899}|Contabilitate.csproj|d:\\proiecte\\c#\\contabilitate\\bilant.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB61E268-1E60-45EE-9BA2-CBDD26075899}|Contabilitate.csproj|D:\\Proiecte\\C#\\Contabilitate\\bilant.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB61E268-1E60-45EE-9BA2-CBDD26075899}|Contabilitate.csproj|solutionrelative:bilant.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB61E268-1E60-45EE-9BA2-CBDD26075899}|Contabilitate.csproj|D:\\Proiecte\\C#\\Contabilitate\\cpp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{AB61E268-1E60-45EE-9BA2-CBDD26075899}|Contabilitate.csproj|solutionrelative:cpp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB61E268-1E60-45EE-9BA2-CBDD26075899}|Contabilitate.csproj|D:\\Proiecte\\C#\\Contabilitate\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Bilant.Designer.cs",
               "DocumentMoniker": "D:\\Proiecte\\C#\\Contabilitate\\Bilant.Designer.cs",
               "RelativeDocumentMoniker": "Bilant.Designer.cs",
@@ -55,7 +55,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Elemente.cs",
               "DocumentMoniker": "D:\\Proiecte\\C#\\Contabilitate\\Elemente.cs",
               "RelativeDocumentMoniker": "Elemente.cs",
@@ -63,25 +63,24 @@
               "RelativeToolTip": "Elemente.cs",
               "ViewState": "AQIAALcAAAAAAAAAAAAcwMgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T09:46:34.291Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-12T09:46:34.291Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Bilant.cs",
               "DocumentMoniker": "D:\\Proiecte\\C#\\Contabilitate\\Bilant.cs",
               "RelativeDocumentMoniker": "Bilant.cs",
               "ToolTip": "D:\\Proiecte\\C#\\Contabilitate\\Bilant.cs",
               "RelativeToolTip": "Bilant.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAAAAAJQAAABHAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcBAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-10T15:52:55.259Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Bilant.cs [Design]",
               "DocumentMoniker": "D:\\Proiecte\\C#\\Contabilitate\\Bilant.cs",
               "RelativeDocumentMoniker": "Bilant.cs",
@@ -93,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "CPP.cs [Design]",
               "DocumentMoniker": "D:\\Proiecte\\C#\\Contabilitate\\CPP.cs",
               "RelativeDocumentMoniker": "CPP.cs",
@@ -113,8 +112,7 @@
               "RelativeToolTip": "Menu.cs",
               "ViewState": "AQIAAA0AAAAAAAAAAAArwBIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T17:44:15.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-09T17:44:15.314Z"
             },
             {
               "$type": "Document",
@@ -125,8 +123,7 @@
               "ToolTip": "D:\\Proiecte\\C#\\Contabilitate\\Menu.cs [Design]",
               "RelativeToolTip": "Menu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-09T17:17:33.467Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-09T17:17:33.467Z"
             }
           ]
         }

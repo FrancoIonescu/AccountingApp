@@ -77,72 +77,218 @@ namespace Contabilitate
         {
             if (tbCont.Text.All(char.IsDigit) && (tbCont.Text.Length == 3 || tbCont.Text.Length == 4))
             {
-                string cont = tbCont.Text;
-
-                switch (cont.Substring(0, 2))
+                float suma;
+                if (float.TryParse(tbSuma.Text, out suma))
                 {
-                    case "21":
-                        {
-                            float sumaImobilizariCorporale;
-                            if (float.TryParse(tbSuma.Text, out sumaImobilizariCorporale))
-                            {
-                                elemente.Active_imobilizate += sumaImobilizariCorporale;
-                                elemente.Imobilizari_corporale += sumaImobilizariCorporale;
-                                BilantContabil.Rows[0].Cells[1].Value = elemente.Active_imobilizate;
-                                BilantContabil.Rows[1].Cells[1].Value = elemente.Imobilizari_corporale;
-                                tbCont.Clear();
-                                cbTip.SelectedIndex = -1;
-                                tbSuma.Clear();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Suma introdusa nu este un numar valid.");
-                            }
-                            break;
-                        }
-                    case "20":
-                        {
-                            float sumaImobilizariNecorporale;
-                            if (float.TryParse(tbSuma.Text, out sumaImobilizariNecorporale))
-                            {
-                                elemente.Active_imobilizate += sumaImobilizariNecorporale;
-                                elemente.Imobilizari_necorporale += sumaImobilizariNecorporale;
-                                BilantContabil.Rows[0].Cells[1].Value = elemente.Active_imobilizate;
-                                BilantContabil.Rows[2].Cells[1].Value = elemente.Imobilizari_necorporale;
-                                tbCont.Clear();
-                                cbTip.SelectedIndex = -1;
-                                tbSuma.Clear();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Suma introdusa nu este un numar valid.");
-                            }
-                            break;
-                        }
-                    case "26":
-                        {
-                            float sumaImobilizariFinanciare;
-                            if (float.TryParse(tbSuma.Text, out sumaImobilizariFinanciare))
-                            {
-                                elemente.Active_imobilizate += sumaImobilizariFinanciare;
-                                elemente.Imobilizari_financiare += sumaImobilizariFinanciare;
-                                BilantContabil.Rows[0].Cells[1].Value = elemente.Active_imobilizate;
-                                BilantContabil.Rows[3].Cells[1].Value = elemente.Imobilizari_financiare;
-                                tbCont.Clear();
-                                cbTip.SelectedIndex = -1;
-                                tbSuma.Clear();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Suma introdusa nu este un numar valid.");
-                            }
-                            break;
-                        }
-                    default:
-                        MessageBox.Show("Contul introdus nu este unul valid.");
-                        break;
-                }
+                    string cont = tbCont.Text;
 
+                    if (cont.Substring(0, 2) == "21")
+                    {
+                        elemente.Active_imobilizate += suma;
+                        elemente.Imobilizari_corporale += suma;
+                        elemente.Active_minus_datorii += suma;
+                        BilantContabil.Rows[0].Cells[1].Value = elemente.Active_imobilizate;
+                        BilantContabil.Rows[1].Cells[1].Value = elemente.Imobilizari_corporale;
+                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;                    
+                    }
+
+                    else if (cont.Substring(0, 2) == "20")
+                    {
+                        elemente.Active_imobilizate += suma;
+                        elemente.Imobilizari_necorporale += suma;
+                        elemente.Active_minus_datorii += suma;
+                        BilantContabil.Rows[0].Cells[1].Value = elemente.Active_imobilizate;
+                        BilantContabil.Rows[2].Cells[1].Value = elemente.Imobilizari_necorporale;
+                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;                      
+                    }
+
+                    else if (cont.Substring(0, 2) == "26")
+                    {          
+                        elemente.Active_imobilizate += suma;
+                        elemente.Imobilizari_financiare += suma;
+                        elemente.Active_minus_datorii += suma;
+                        BilantContabil.Rows[0].Cells[1].Value = elemente.Active_imobilizate;
+                        BilantContabil.Rows[3].Cells[1].Value = elemente.Imobilizari_financiare;
+                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;                       
+                    }
+
+                    else if (cont.Substring(0, 1) == "3")
+                    {
+                        elemente.Stocuri += suma;
+                        elemente.Active_circulante += suma;
+                        elemente.Active_circulante_nete += suma;
+                        elemente.Active_minus_datorii += suma;
+                        BilantContabil.Rows[4].Cells[1].Value = elemente.Active_circulante;
+                        BilantContabil.Rows[5].Cells[1].Value = elemente.Stocuri;
+                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+
+                    else if (cont.Substring (0, 2) == "41")
+                    {
+                        elemente.Creante += suma;
+                        elemente.Active_circulante += suma;
+                        elemente.Active_circulante_nete += suma;
+                        elemente.Active_minus_datorii += suma;
+                        BilantContabil.Rows[4].Cells[1].Value = elemente.Active_circulante;
+                        BilantContabil.Rows[6].Cells[1].Value = elemente.Creante;
+                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+
+                    else if (cont.Substring(0, 2) == "50")
+                    {
+                        elemente.Investitii_pe_termen_scurt += suma;
+                        elemente.Active_circulante += suma;
+                        elemente.Active_circulante_nete += suma;
+                        elemente.Active_minus_datorii += suma;
+                        BilantContabil.Rows[4].Cells[1].Value = elemente.Active_circulante;
+                        BilantContabil.Rows[7].Cells[1].Value = elemente.Investitii_pe_termen_scurt;
+                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+
+                    else if (cont.Substring(0, 2) == "51")
+                    {
+                        elemente.Casa_si_conturi_la_banci += suma;
+                        elemente.Active_circulante += suma;
+                        elemente.Active_circulante_nete += suma;
+                        elemente.Active_minus_datorii += suma;
+                        BilantContabil.Rows[4].Cells[1].Value = elemente.Active_circulante;
+                        BilantContabil.Rows[8].Cells[1].Value = elemente.Casa_si_conturi_la_banci;
+                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+
+                    else if (cont.Substring(0, 3) == "471")
+                    {
+                        elemente.Cheltuieli_in_avans += suma;
+                        elemente.Active_circulante_nete += suma;
+                        elemente.Active_minus_datorii += suma;
+                        BilantContabil.Rows[9].Cells[1].Value = elemente.Cheltuieli_in_avans;
+                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+
+                    else if (cont.Substring(0, 2) == "40" || cont.Substring(0, 2) == "44" || cont.Substring(0, 2) == "45" || cont.Substring(0, 2) == "46")
+                    {
+                        elemente.Datorii_termen_scurt += suma;
+                        elemente.Active_circulante_nete -= suma;
+                        elemente.Active_minus_datorii -= suma;
+                        BilantContabil.Rows[10].Cells[1].Value = elemente.Datorii_termen_scurt;
+                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+
+                    else if (cont.Substring(0, 2) == "42" || cont.Substring(0, 2) == "43" || cont.Substring(0, 2) == "48" || cont.Substring(0, 2) == "49")
+                    {
+                        elemente.Datorii_termen_lung += suma;
+                        BilantContabil.Rows[13].Cells[1].Value = elemente.Datorii_termen_lung;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+
+                    else if (cont.Substring(0, 3) == "472")
+                    {
+                        elemente.Venituri_in_avans += suma;
+                        BilantContabil.Rows[14].Cells[1].Value = elemente.Venituri_in_avans;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+
+                    else if (cont.Substring(0, 3) == "101" || cont.Substring(0, 3) == "103")
+                    {
+                        elemente.Capital += suma;
+                        elemente.Capital_si_rezerve += suma;
+                        BilantContabil.Rows[16].Cells[1].Value = elemente.Capital_si_rezerve;
+                        BilantContabil.Rows[17].Cells[1].Value = elemente.Capital;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+
+                    else if (cont.Substring(0, 3) == "104")
+                    {
+                        elemente.Prime_de_capital += suma;
+                        elemente.Capital_si_rezerve += suma;
+                        BilantContabil.Rows[16].Cells[1].Value = elemente.Capital_si_rezerve;
+                        BilantContabil.Rows[18].Cells[1].Value = elemente.Prime_de_capital;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+
+                    else if (cont.Substring(0, 3) == "105")
+                    {
+                        elemente.Rezerve_din_reevaluare += suma;
+                        elemente.Capital_si_rezerve += suma;
+                        BilantContabil.Rows[16].Cells[1].Value = elemente.Capital_si_rezerve;
+                        BilantContabil.Rows[19].Cells[1].Value = elemente.Rezerve_din_reevaluare;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+
+                    else if (cont.Substring(0, 3) == "106")
+                    {
+                        elemente.Rezerve += suma;
+                        elemente.Capital_si_rezerve += suma;
+                        BilantContabil.Rows[16].Cells[1].Value = elemente.Capital_si_rezerve;
+                        BilantContabil.Rows[20].Cells[1].Value = elemente.Rezerve;
+                        tbCont.Clear();
+                        cbTip.SelectedIndex = -1;
+                        tbSuma.Clear();
+                        suma = 0;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Suma introdusa nu este un numar valid.");
+                }
+                            
             }
             else
             {

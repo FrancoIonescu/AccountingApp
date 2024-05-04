@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BilantContabil = new System.Windows.Forms.DataGridView();
             this.denumire_element = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sold = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,16 +51,17 @@
             this.BilantContabil.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.denumire_element,
             this.sold});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BilantContabil.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BilantContabil.DefaultCellStyle = dataGridViewCellStyle1;
             this.BilantContabil.Location = new System.Drawing.Point(-1, 0);
             this.BilantContabil.Name = "BilantContabil";
+            this.BilantContabil.ReadOnly = true;
             this.BilantContabil.RowHeadersWidth = 51;
             this.BilantContabil.RowTemplate.Height = 24;
             this.BilantContabil.Size = new System.Drawing.Size(710, 677);
@@ -72,6 +73,7 @@
             this.denumire_element.HeaderText = "Denumirea Elementului";
             this.denumire_element.MinimumWidth = 6;
             this.denumire_element.Name = "denumire_element";
+            this.denumire_element.ReadOnly = true;
             this.denumire_element.Width = 320;
             // 
             // sold
@@ -80,6 +82,7 @@
             this.sold.HeaderText = "Sold ";
             this.sold.MinimumWidth = 6;
             this.sold.Name = "sold";
+            this.sold.ReadOnly = true;
             this.sold.Width = 170;
             // 
             // label1
