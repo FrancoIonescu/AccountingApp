@@ -13,11 +13,11 @@ namespace Contabilitate
 {
     public partial class Bilant : Form
     {
-        Elemente elemente = new Elemente();
+        Elemente bilant = new Elemente();
         public Bilant()
         {
             InitializeComponent();
-            this.Width = 800; // Setează lățimea formei la 800 de pixeli
+            this.Width = 800;
             this.Height = 800;
             Font font = new Font("Arial", 13, FontStyle.Regular);
             BilantContabil.Font = font;
@@ -48,29 +48,29 @@ namespace Contabilitate
             BilantContabil.Rows.Add("V. Profitul sau pierderea reportat/a");
             BilantContabil.Rows.Add("VI. Profitul sau pierderea exercitiului financiar");
             BilantContabil.Rows[22].Height = 50;
-            BilantContabil.Rows[0].Cells[1].Value = elemente.Active_imobilizate; 
-            BilantContabil.Rows[1].Cells[1].Value = elemente.Imobilizari_corporale;
-            BilantContabil.Rows[2].Cells[1].Value = elemente.Imobilizari_necorporale;
-            BilantContabil.Rows[3].Cells[1].Value = elemente.Imobilizari_financiare;
-            BilantContabil.Rows[4].Cells[1].Value = elemente.Active_circulante;
-            BilantContabil.Rows[5].Cells[1].Value = elemente.Stocuri;
-            BilantContabil.Rows[6].Cells[1].Value = elemente.Creante;
-            BilantContabil.Rows[7].Cells[1].Value = elemente.Investitii_pe_termen_scurt;
-            BilantContabil.Rows[8].Cells[1].Value = elemente.Casa_si_conturi_la_banci;
-            BilantContabil.Rows[9].Cells[1].Value = elemente.Cheltuieli_in_avans;
-            BilantContabil.Rows[10].Cells[1].Value = elemente.Datorii_termen_scurt;
-            BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
-            BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
-            BilantContabil.Rows[13].Cells[1].Value = elemente.Datorii_termen_lung;
-            BilantContabil.Rows[14].Cells[1].Value = elemente.Provizioane;
-            BilantContabil.Rows[15].Cells[1].Value = elemente.Venituri_in_avans;
-            BilantContabil.Rows[16].Cells[1].Value = elemente.Capital_si_rezerve;
-            BilantContabil.Rows[17].Cells[1].Value = elemente.Capital;
-            BilantContabil.Rows[18].Cells[1].Value = elemente.Prime_de_capital;
-            BilantContabil.Rows[19].Cells[1].Value = elemente.Rezerve_din_reevaluare;
-            BilantContabil.Rows[20].Cells[1].Value = elemente.Rezerve;
-            BilantContabil.Rows[21].Cells[1].Value = elemente.Profit_pierdere_reportata;
-            BilantContabil.Rows[22].Cells[1].Value = elemente.Profit_pierdere_curent;
+            BilantContabil.Rows[0].Cells[1].Value = bilant.Active_imobilizate; 
+            BilantContabil.Rows[1].Cells[1].Value = bilant.Imobilizari_corporale;
+            BilantContabil.Rows[2].Cells[1].Value = bilant.Imobilizari_necorporale;
+            BilantContabil.Rows[3].Cells[1].Value = bilant.Imobilizari_financiare;
+            BilantContabil.Rows[4].Cells[1].Value = bilant.Active_circulante;
+            BilantContabil.Rows[5].Cells[1].Value = bilant.Stocuri;
+            BilantContabil.Rows[6].Cells[1].Value = bilant.Creante;
+            BilantContabil.Rows[7].Cells[1].Value = bilant.Investitii_pe_termen_scurt;
+            BilantContabil.Rows[8].Cells[1].Value = bilant.Casa_si_conturi_la_banci;
+            BilantContabil.Rows[9].Cells[1].Value = bilant.Cheltuieli_in_avans;
+            BilantContabil.Rows[10].Cells[1].Value = bilant.Datorii_termen_scurt;
+            BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
+            BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
+            BilantContabil.Rows[13].Cells[1].Value = bilant.Datorii_termen_lung;
+            BilantContabil.Rows[14].Cells[1].Value = bilant.Provizioane;
+            BilantContabil.Rows[15].Cells[1].Value = bilant.Venituri_in_avans;
+            BilantContabil.Rows[16].Cells[1].Value = bilant.Capital_si_rezerve;
+            BilantContabil.Rows[17].Cells[1].Value = bilant.Capital;
+            BilantContabil.Rows[18].Cells[1].Value = bilant.Prime_de_capital;
+            BilantContabil.Rows[19].Cells[1].Value = bilant.Rezerve_din_reevaluare;
+            BilantContabil.Rows[20].Cells[1].Value = bilant.Rezerve;
+            BilantContabil.Rows[21].Cells[1].Value = bilant.Profit_pierdere_reportata;
+            BilantContabil.Rows[22].Cells[1].Value = bilant.Profit_pierdere_curent;
         }
 
         private void adauga_Click(object sender, EventArgs e)
@@ -84,12 +84,12 @@ namespace Contabilitate
 
                     if (cont.Substring(0, 2) == "21")
                     {
-                        elemente.Active_imobilizate += suma;
-                        elemente.Imobilizari_corporale += suma;
-                        elemente.Active_minus_datorii += suma;
-                        BilantContabil.Rows[0].Cells[1].Value = elemente.Active_imobilizate;
-                        BilantContabil.Rows[1].Cells[1].Value = elemente.Imobilizari_corporale;
-                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        bilant.Active_imobilizate += suma;
+                        bilant.Imobilizari_corporale += suma;
+                        bilant.Active_minus_datorii += suma;
+                        BilantContabil.Rows[0].Cells[1].Value = bilant.Active_imobilizate;
+                        BilantContabil.Rows[1].Cells[1].Value = bilant.Imobilizari_corporale;
+                        BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -98,12 +98,12 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 2) == "20")
                     {
-                        elemente.Active_imobilizate += suma;
-                        elemente.Imobilizari_necorporale += suma;
-                        elemente.Active_minus_datorii += suma;
-                        BilantContabil.Rows[0].Cells[1].Value = elemente.Active_imobilizate;
-                        BilantContabil.Rows[2].Cells[1].Value = elemente.Imobilizari_necorporale;
-                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        bilant.Active_imobilizate += suma;
+                        bilant.Imobilizari_necorporale += suma;
+                        bilant.Active_minus_datorii += suma;
+                        BilantContabil.Rows[0].Cells[1].Value = bilant.Active_imobilizate;
+                        BilantContabil.Rows[2].Cells[1].Value = bilant.Imobilizari_necorporale;
+                        BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -112,12 +112,12 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 2) == "26")
                     {          
-                        elemente.Active_imobilizate += suma;
-                        elemente.Imobilizari_financiare += suma;
-                        elemente.Active_minus_datorii += suma;
-                        BilantContabil.Rows[0].Cells[1].Value = elemente.Active_imobilizate;
-                        BilantContabil.Rows[3].Cells[1].Value = elemente.Imobilizari_financiare;
-                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        bilant.Active_imobilizate += suma;
+                        bilant.Imobilizari_financiare += suma;
+                        bilant.Active_minus_datorii += suma;
+                        BilantContabil.Rows[0].Cells[1].Value = bilant.Active_imobilizate;
+                        BilantContabil.Rows[3].Cells[1].Value = bilant.Imobilizari_financiare;
+                        BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -126,14 +126,14 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 1) == "3")
                     {
-                        elemente.Stocuri += suma;
-                        elemente.Active_circulante += suma;
-                        elemente.Active_circulante_nete += suma;
-                        elemente.Active_minus_datorii += suma;
-                        BilantContabil.Rows[4].Cells[1].Value = elemente.Active_circulante;
-                        BilantContabil.Rows[5].Cells[1].Value = elemente.Stocuri;
-                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
-                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        bilant.Stocuri += suma;
+                        bilant.Active_circulante += suma;
+                        bilant.Active_circulante_nete += suma;
+                        bilant.Active_minus_datorii += suma;
+                        BilantContabil.Rows[4].Cells[1].Value = bilant.Active_circulante;
+                        BilantContabil.Rows[5].Cells[1].Value = bilant.Stocuri;
+                        BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -142,14 +142,14 @@ namespace Contabilitate
 
                     else if (cont.Substring (0, 2) == "41")
                     {
-                        elemente.Creante += suma;
-                        elemente.Active_circulante += suma;
-                        elemente.Active_circulante_nete += suma;
-                        elemente.Active_minus_datorii += suma;
-                        BilantContabil.Rows[4].Cells[1].Value = elemente.Active_circulante;
-                        BilantContabil.Rows[6].Cells[1].Value = elemente.Creante;
-                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
-                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        bilant.Creante += suma;
+                        bilant.Active_circulante += suma;
+                        bilant.Active_circulante_nete += suma;
+                        bilant.Active_minus_datorii += suma;
+                        BilantContabil.Rows[4].Cells[1].Value = bilant.Active_circulante;
+                        BilantContabil.Rows[6].Cells[1].Value = bilant.Creante;
+                        BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -158,14 +158,14 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 2) == "50")
                     {
-                        elemente.Investitii_pe_termen_scurt += suma;
-                        elemente.Active_circulante += suma;
-                        elemente.Active_circulante_nete += suma;
-                        elemente.Active_minus_datorii += suma;
-                        BilantContabil.Rows[4].Cells[1].Value = elemente.Active_circulante;
-                        BilantContabil.Rows[7].Cells[1].Value = elemente.Investitii_pe_termen_scurt;
-                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
-                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        bilant.Investitii_pe_termen_scurt += suma;
+                        bilant.Active_circulante += suma;
+                        bilant.Active_circulante_nete += suma;
+                        bilant.Active_minus_datorii += suma;
+                        BilantContabil.Rows[4].Cells[1].Value = bilant.Active_circulante;
+                        BilantContabil.Rows[7].Cells[1].Value = bilant.Investitii_pe_termen_scurt;
+                        BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -174,14 +174,14 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 2) == "51")
                     {
-                        elemente.Casa_si_conturi_la_banci += suma;
-                        elemente.Active_circulante += suma;
-                        elemente.Active_circulante_nete += suma;
-                        elemente.Active_minus_datorii += suma;
-                        BilantContabil.Rows[4].Cells[1].Value = elemente.Active_circulante;
-                        BilantContabil.Rows[8].Cells[1].Value = elemente.Casa_si_conturi_la_banci;
-                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
-                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        bilant.Casa_si_conturi_la_banci += suma;
+                        bilant.Active_circulante += suma;
+                        bilant.Active_circulante_nete += suma;
+                        bilant.Active_minus_datorii += suma;
+                        BilantContabil.Rows[4].Cells[1].Value = bilant.Active_circulante;
+                        BilantContabil.Rows[8].Cells[1].Value = bilant.Casa_si_conturi_la_banci;
+                        BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -190,12 +190,12 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 3) == "471")
                     {
-                        elemente.Cheltuieli_in_avans += suma;
-                        elemente.Active_circulante_nete += suma;
-                        elemente.Active_minus_datorii += suma;
-                        BilantContabil.Rows[9].Cells[1].Value = elemente.Cheltuieli_in_avans;
-                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
-                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        bilant.Cheltuieli_in_avans += suma;
+                        bilant.Active_circulante_nete += suma;
+                        bilant.Active_minus_datorii += suma;
+                        BilantContabil.Rows[9].Cells[1].Value = bilant.Cheltuieli_in_avans;
+                        BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -204,12 +204,12 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 2) == "40" || cont.Substring(0, 2) == "44" || cont.Substring(0, 2) == "45" || cont.Substring(0, 2) == "46")
                     {
-                        elemente.Datorii_termen_scurt += suma;
-                        elemente.Active_circulante_nete -= suma;
-                        elemente.Active_minus_datorii -= suma;
-                        BilantContabil.Rows[10].Cells[1].Value = elemente.Datorii_termen_scurt;
-                        BilantContabil.Rows[11].Cells[1].Value = elemente.Active_circulante_nete;
-                        BilantContabil.Rows[12].Cells[1].Value = elemente.Active_minus_datorii;
+                        bilant.Datorii_termen_scurt += suma;
+                        bilant.Active_circulante_nete -= suma;
+                        bilant.Active_minus_datorii -= suma;
+                        BilantContabil.Rows[10].Cells[1].Value = bilant.Datorii_termen_scurt;
+                        BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
+                        BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -218,8 +218,8 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 2) == "42" || cont.Substring(0, 2) == "43" || cont.Substring(0, 2) == "48" || cont.Substring(0, 2) == "49")
                     {
-                        elemente.Datorii_termen_lung += suma;
-                        BilantContabil.Rows[13].Cells[1].Value = elemente.Datorii_termen_lung;
+                        bilant.Datorii_termen_lung += suma;
+                        BilantContabil.Rows[13].Cells[1].Value = bilant.Datorii_termen_lung;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -228,8 +228,8 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 3) == "472")
                     {
-                        elemente.Venituri_in_avans += suma;
-                        BilantContabil.Rows[14].Cells[1].Value = elemente.Venituri_in_avans;
+                        bilant.Venituri_in_avans += suma;
+                        BilantContabil.Rows[14].Cells[1].Value = bilant.Venituri_in_avans;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -238,10 +238,10 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 3) == "101" || cont.Substring(0, 3) == "103")
                     {
-                        elemente.Capital += suma;
-                        elemente.Capital_si_rezerve += suma;
-                        BilantContabil.Rows[16].Cells[1].Value = elemente.Capital_si_rezerve;
-                        BilantContabil.Rows[17].Cells[1].Value = elemente.Capital;
+                        bilant.Capital += suma;
+                        bilant.Capital_si_rezerve += suma;
+                        BilantContabil.Rows[16].Cells[1].Value = bilant.Capital_si_rezerve;
+                        BilantContabil.Rows[17].Cells[1].Value = bilant.Capital;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -250,10 +250,10 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 3) == "104")
                     {
-                        elemente.Prime_de_capital += suma;
-                        elemente.Capital_si_rezerve += suma;
-                        BilantContabil.Rows[16].Cells[1].Value = elemente.Capital_si_rezerve;
-                        BilantContabil.Rows[18].Cells[1].Value = elemente.Prime_de_capital;
+                        bilant.Prime_de_capital += suma;
+                        bilant.Capital_si_rezerve += suma;
+                        BilantContabil.Rows[16].Cells[1].Value = bilant.Capital_si_rezerve;
+                        BilantContabil.Rows[18].Cells[1].Value = bilant.Prime_de_capital;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -262,10 +262,10 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 3) == "105")
                     {
-                        elemente.Rezerve_din_reevaluare += suma;
-                        elemente.Capital_si_rezerve += suma;
-                        BilantContabil.Rows[16].Cells[1].Value = elemente.Capital_si_rezerve;
-                        BilantContabil.Rows[19].Cells[1].Value = elemente.Rezerve_din_reevaluare;
+                        bilant.Rezerve_din_reevaluare += suma;
+                        bilant.Capital_si_rezerve += suma;
+                        BilantContabil.Rows[16].Cells[1].Value = bilant.Capital_si_rezerve;
+                        BilantContabil.Rows[19].Cells[1].Value = bilant.Rezerve_din_reevaluare;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -274,10 +274,10 @@ namespace Contabilitate
 
                     else if (cont.Substring(0, 3) == "106")
                     {
-                        elemente.Rezerve += suma;
-                        elemente.Capital_si_rezerve += suma;
-                        BilantContabil.Rows[16].Cells[1].Value = elemente.Capital_si_rezerve;
-                        BilantContabil.Rows[20].Cells[1].Value = elemente.Rezerve;
+                        bilant.Rezerve += suma;
+                        bilant.Capital_si_rezerve += suma;
+                        BilantContabil.Rows[16].Cells[1].Value = bilant.Capital_si_rezerve;
+                        BilantContabil.Rows[20].Cells[1].Value = bilant.Rezerve;
                         tbCont.Clear();
                         cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
@@ -286,13 +286,13 @@ namespace Contabilitate
                 }
                 else
                 {
-                    MessageBox.Show("Suma introdusa nu este un numar valid.");
+                    MessageBox.Show("Suma introdusa nu este valida.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                             
             }
             else
             {
-                MessageBox.Show("Contul introdus nu este unul valid.");
+                MessageBox.Show("Contul introdus nu este valid.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

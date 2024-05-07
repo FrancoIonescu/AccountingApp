@@ -39,8 +39,8 @@
             // 
             // Bilant
             // 
-            this.Bilant.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bilant.Location = new System.Drawing.Point(181, 187);
+            this.Bilant.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bilant.Location = new System.Drawing.Point(326, 165);
             this.Bilant.Name = "Bilant";
             this.Bilant.Size = new System.Drawing.Size(116, 54);
             this.Bilant.TabIndex = 0;
@@ -51,17 +51,18 @@
             // titlu
             // 
             this.titlu.AutoSize = true;
-            this.titlu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titlu.Location = new System.Drawing.Point(273, 98);
+            this.titlu.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titlu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.titlu.Location = new System.Drawing.Point(257, 90);
             this.titlu.Name = "titlu";
-            this.titlu.Size = new System.Drawing.Size(207, 29);
+            this.titlu.Size = new System.Drawing.Size(276, 38);
             this.titlu.TabIndex = 2;
             this.titlu.Text = "CONTABILITATE";
             // 
             // CPP
             // 
-            this.CPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPP.Location = new System.Drawing.Point(446, 187);
+            this.CPP.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPP.Location = new System.Drawing.Point(328, 243);
             this.CPP.Name = "CPP";
             this.CPP.Size = new System.Drawing.Size(114, 54);
             this.CPP.TabIndex = 3;
@@ -77,20 +78,20 @@
             this.cppToolStripMenuItem});
             this.Meniu.Location = new System.Drawing.Point(0, 0);
             this.Meniu.Name = "Meniu";
-            this.Meniu.Size = new System.Drawing.Size(800, 28);
+            this.Meniu.Size = new System.Drawing.Size(800, 30);
             this.Meniu.TabIndex = 4;
             this.Meniu.Text = "menuStrip1";
             // 
             // bilantToolStripMenuItem
             // 
             this.bilantToolStripMenuItem.Name = "bilantToolStripMenuItem";
-            this.bilantToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.bilantToolStripMenuItem.Size = new System.Drawing.Size(61, 26);
             this.bilantToolStripMenuItem.Text = "Bilant";
             // 
             // cppToolStripMenuItem
             // 
             this.cppToolStripMenuItem.Name = "cppToolStripMenuItem";
-            this.cppToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.cppToolStripMenuItem.Size = new System.Drawing.Size(48, 26);
             this.cppToolStripMenuItem.Text = "CPP";
             // 
             // Menu

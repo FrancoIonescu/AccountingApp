@@ -64,7 +64,7 @@
             this.BilantContabil.ReadOnly = true;
             this.BilantContabil.RowHeadersWidth = 51;
             this.BilantContabil.RowTemplate.Height = 24;
-            this.BilantContabil.Size = new System.Drawing.Size(710, 677);
+            this.BilantContabil.Size = new System.Drawing.Size(710, 671);
             this.BilantContabil.TabIndex = 0;
             // 
             // denumire_element
@@ -79,7 +79,7 @@
             // sold
             // 
             this.sold.Frozen = true;
-            this.sold.HeaderText = "Sold ";
+            this.sold.HeaderText = "Sume";
             this.sold.MinimumWidth = 6;
             this.sold.Name = "sold";
             this.sold.ReadOnly = true;
@@ -88,30 +88,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(735, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 25);
+            this.label1.Size = new System.Drawing.Size(53, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cont";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(736, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 25);
+            this.label2.Size = new System.Drawing.Size(40, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tip";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(736, 182);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 25);
+            this.label3.Size = new System.Drawing.Size(60, 22);
             this.label3.TabIndex = 3;
             this.label3.Text = "Suma";
             // 
@@ -146,7 +146,7 @@
             // 
             // adauga
             // 
-            this.adauga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.adauga.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adauga.Location = new System.Drawing.Point(854, 236);
             this.adauga.Name = "adauga";
             this.adauga.Size = new System.Drawing.Size(100, 40);
@@ -179,8 +179,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView BilantContabil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn denumire_element;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sold;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -188,5 +186,7 @@
         private System.Windows.Forms.ComboBox cbTip;
         private System.Windows.Forms.TextBox tbSuma;
         private System.Windows.Forms.Button adauga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn denumire_element;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sold;
     }
 }

@@ -16,6 +16,7 @@ namespace Contabilitate
         public Menu()
         {
             InitializeComponent();
+            this.BackColor = Color.SeaGreen;
         }
 
         private void Bilant_Click(object sender, EventArgs e)
