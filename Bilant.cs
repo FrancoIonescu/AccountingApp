@@ -18,7 +18,9 @@ namespace Contabilitate
         {
             InitializeComponent();
             this.Width = 800;
-            this.Height = 800;
+            this.Height = 580;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             Font font = new Font("Arial", 13, FontStyle.Regular);
             BilantContabil.Font = font;
             BilantContabil.Rows.Add("A. Active Imobilizate");

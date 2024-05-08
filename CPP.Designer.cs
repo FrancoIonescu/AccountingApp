@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ContProfitPierdere = new System.Windows.Forms.DataGridView();
             this.elemente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sume = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +37,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdauga = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbSalvare = new System.Windows.Forms.ComboBox();
+            this.cbPreluare = new System.Windows.Forms.ComboBox();
+            this.btnSalveaza = new System.Windows.Forms.Button();
+            this.btnPreia = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ContProfitPierdere)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,20 +55,20 @@
             this.ContProfitPierdere.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.elemente,
             this.sume});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ContProfitPierdere.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ContProfitPierdere.DefaultCellStyle = dataGridViewCellStyle1;
             this.ContProfitPierdere.Location = new System.Drawing.Point(2, -1);
             this.ContProfitPierdere.Name = "ContProfitPierdere";
             this.ContProfitPierdere.ReadOnly = true;
             this.ContProfitPierdere.RowHeadersWidth = 51;
             this.ContProfitPierdere.RowTemplate.Height = 24;
-            this.ContProfitPierdere.Size = new System.Drawing.Size(645, 715);
+            this.ContProfitPierdere.Size = new System.Drawing.Size(645, 492);
             this.ContProfitPierdere.TabIndex = 0;
             // 
             // elemente
@@ -127,11 +133,83 @@
             this.btnAdauga.UseVisualStyleBackColor = true;
             this.btnAdauga.Click += new System.EventHandler(this.btnAdauga_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Rockwell", 12F);
+            this.label3.Location = new System.Drawing.Point(664, 248);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 22);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Salvare";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Rockwell", 12F);
+            this.label4.Location = new System.Drawing.Point(667, 369);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 22);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Preluare";
+            // 
+            // cbSalvare
+            // 
+            this.cbSalvare.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSalvare.FormattingEnabled = true;
+            this.cbSalvare.Items.AddRange(new object[] {
+            "binar",
+            "xml"});
+            this.cbSalvare.Location = new System.Drawing.Point(777, 248);
+            this.cbSalvare.Name = "cbSalvare";
+            this.cbSalvare.Size = new System.Drawing.Size(141, 28);
+            this.cbSalvare.TabIndex = 8;
+            // 
+            // cbPreluare
+            // 
+            this.cbPreluare.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPreluare.FormattingEnabled = true;
+            this.cbPreluare.Items.AddRange(new object[] {
+            "binar",
+            "xml"});
+            this.cbPreluare.Location = new System.Drawing.Point(777, 368);
+            this.cbPreluare.Name = "cbPreluare";
+            this.cbPreluare.Size = new System.Drawing.Size(141, 28);
+            this.cbPreluare.TabIndex = 9;
+            // 
+            // btnSalveaza
+            // 
+            this.btnSalveaza.Font = new System.Drawing.Font("Rockwell", 10.2F);
+            this.btnSalveaza.Location = new System.Drawing.Point(803, 300);
+            this.btnSalveaza.Name = "btnSalveaza";
+            this.btnSalveaza.Size = new System.Drawing.Size(93, 36);
+            this.btnSalveaza.TabIndex = 10;
+            this.btnSalveaza.Text = "Salveaza";
+            this.btnSalveaza.UseVisualStyleBackColor = true;
+            this.btnSalveaza.Click += new System.EventHandler(this.btnSalveaza_Click);
+            // 
+            // btnPreia
+            // 
+            this.btnPreia.Font = new System.Drawing.Font("Rockwell", 10.2F);
+            this.btnPreia.Location = new System.Drawing.Point(803, 419);
+            this.btnPreia.Name = "btnPreia";
+            this.btnPreia.Size = new System.Drawing.Size(93, 41);
+            this.btnPreia.TabIndex = 11;
+            this.btnPreia.Text = "Preia";
+            this.btnPreia.UseVisualStyleBackColor = true;
+            this.btnPreia.Click += new System.EventHandler(this.btnPreia_Click);
+            // 
             // CPP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 926);
+            this.ClientSize = new System.Drawing.Size(995, 737);
+            this.Controls.Add(this.btnPreia);
+            this.Controls.Add(this.btnSalveaza);
+            this.Controls.Add(this.cbPreluare);
+            this.Controls.Add(this.cbSalvare);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAdauga);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -156,5 +234,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAdauga;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbSalvare;
+        private System.Windows.Forms.ComboBox cbPreluare;
+        private System.Windows.Forms.Button btnSalveaza;
+        private System.Windows.Forms.Button btnPreia;
     }
 }

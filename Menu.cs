@@ -17,6 +17,8 @@ namespace Contabilitate
         {
             InitializeComponent();
             this.BackColor = Color.SeaGreen;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
         }
 
         private void Bilant_Click(object sender, EventArgs e)

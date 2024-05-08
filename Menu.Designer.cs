@@ -34,12 +34,13 @@
             this.Meniu = new System.Windows.Forms.MenuStrip();
             this.bilantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.Meniu.SuspendLayout();
             this.SuspendLayout();
             // 
             // Bilant
             // 
-            this.Bilant.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bilant.Font = new System.Drawing.Font("Rockwell", 10.2F);
             this.Bilant.Location = new System.Drawing.Point(326, 165);
             this.Bilant.Name = "Bilant";
             this.Bilant.Size = new System.Drawing.Size(116, 54);
@@ -51,11 +52,11 @@
             // titlu
             // 
             this.titlu.AutoSize = true;
-            this.titlu.Font = new System.Drawing.Font("Rockwell", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titlu.Font = new System.Drawing.Font("Rockwell", 20F, System.Drawing.FontStyle.Bold);
             this.titlu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.titlu.Location = new System.Drawing.Point(257, 90);
+            this.titlu.Location = new System.Drawing.Point(239, 86);
             this.titlu.Name = "titlu";
-            this.titlu.Size = new System.Drawing.Size(276, 38);
+            this.titlu.Size = new System.Drawing.Size(315, 42);
             this.titlu.TabIndex = 2;
             this.titlu.Text = "CONTABILITATE";
             // 
@@ -78,7 +79,7 @@
             this.cppToolStripMenuItem});
             this.Meniu.Location = new System.Drawing.Point(0, 0);
             this.Meniu.Name = "Meniu";
-            this.Meniu.Size = new System.Drawing.Size(800, 30);
+            this.Meniu.Size = new System.Drawing.Size(800, 28);
             this.Meniu.TabIndex = 4;
             this.Meniu.Text = "menuStrip1";
             // 
@@ -94,11 +95,22 @@
             this.cppToolStripMenuItem.Size = new System.Drawing.Size(48, 26);
             this.cppToolStripMenuItem.Text = "CPP";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Rockwell", 10.2F);
+            this.button1.Location = new System.Drawing.Point(328, 315);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 55);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Info";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.CPP);
             this.Controls.Add(this.titlu);
             this.Controls.Add(this.Bilant);
@@ -121,6 +133,7 @@
         private System.Windows.Forms.MenuStrip Meniu;
         private System.Windows.Forms.ToolStripMenuItem bilantToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cppToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 
