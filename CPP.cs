@@ -14,7 +14,7 @@ namespace Contabilitate
 {
     public partial class CPP : Form
     {
-        Elemente cpp = new Elemente();
+        ContCPP cpp = new ContCPP();
         public CPP()
         {
             InitializeComponent();

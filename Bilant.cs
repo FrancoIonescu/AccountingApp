@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +15,7 @@ namespace Contabilitate
 {
     public partial class Bilant : Form
     {
-        Elemente bilant = new Elemente();
+        ContBilant bilant = new ContBilant();
         public Bilant()
         {
             InitializeComponent();
@@ -295,6 +297,65 @@ namespace Contabilitate
             else
             {
                 MessageBox.Show("Contul introdus nu este valid.", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSalveaza_Click(object sender, EventArgs e)
+        {
+            if (cbSalvare.Text == "binar")
+            {
+                SaveFileDialog fisierBinar = new SaveFileDialog();
+                fisierBinar.Filter = "Fisier binar (*.bin)|*.bin";
+                fisierBinar.Title = "Bilant Contabil";
+                if (fisierBinar.ShowDialog() == DialogResult.OK)
+                {
+                    List<object[]> dataToSave = new List<object[]>();
+                    foreach (DataGridViewRow row in BilantContabil.Rows)
+                    {
+
+                        object[] rowData = new object[row.Cells.Count];
+                        for (int i = 0; i < row.Cells.Count; i++)
+                        {
+                            rowData[i] = row.Cells[i].Value;
+                        }
+                        dataToSave.Add(rowData);
+                    }
+
+                    using (FileStream fileStream = new FileStream(fisierBinar.FileName, FileMode.Create))
+                    {
+                        BinaryFormatter binaryFormatter = new BinaryFormatter();
+                        binaryFormatter.Serialize(fileStream, dataToSave);
+                    }
+                }
+            }
+        }
+
+        private void btnPreia_Click(object sender, EventArgs e)
+        {
+            if (cbPreluare.Text == "binar")
+            {
+                OpenFileDialog fisierBinar = new OpenFileDialog();
+                fisierBinar.Filter = "Fisier binar (*.bin)|*.bin";
+                fisierBinar.Title = "Bilant Contabil";
+                if (fisierBinar.ShowDialog() == DialogResult.OK)
+                {
+                    using (FileStream fileStream = new FileStream(fisierBinar.FileName, FileMode.Open))
+                    {
+                        BinaryFormatter binaryFormatter = new BinaryFormatter();
+                        List<object[]> loadedData = (List<object[]>)binaryFormatter.Deserialize(fileStream);
+
+                        BilantContabil.Rows.Clear();
+
+                        foreach (object[] rowData in loadedData)
+                        {
+                            BilantContabil.Rows.Add(rowData);
+                        }
+                        BilantContabil.Rows[7].Height = 50;
+                        BilantContabil.Rows[10].Height = 50;
+                        BilantContabil.Rows[13].Height = 50;
+                        BilantContabil.Rows[22].Height = 50;
+                    }
+                }
             }
         }
     }

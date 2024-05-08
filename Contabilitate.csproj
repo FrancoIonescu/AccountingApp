@@ -52,13 +52,14 @@
     <Compile Include="Bilant.Designer.cs">
       <DependentUpon>Bilant.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContCPP.cs" />
     <Compile Include="CPP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPP.Designer.cs">
       <DependentUpon>CPP.cs</DependentUpon>
     </Compile>
-    <Compile Include="Elemente.cs" />
+    <Compile Include="ContBilant.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
