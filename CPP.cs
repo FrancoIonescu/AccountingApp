@@ -51,6 +51,9 @@ namespace Contabilitate
             ContProfitPierdere.Rows[9].Cells[1].Value = cpp.Cheltuieli_impozit_profit;
             ContProfitPierdere.Rows[10].Cells[1].Value = cpp.Profit_pierdere_net;
 
+            bilantToolStripMenuItem.Text = "&Bilant";
+            cppToolStripMenuItem.Text = "&CPP";
+            infoToolStripMenuItem.Text = "&Info";
         }
 
         private void btnAdauga_Click(object sender, EventArgs e)
@@ -204,6 +207,90 @@ namespace Contabilitate
                         ContProfitPierdere.Rows[9].Height = 50;
                         ContProfitPierdere.Rows[10].Height = 50;
                     }
+                }
+            }
+        }
+
+        private void bilantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bilant bilantContabilNou = new Bilant();
+            bilantContabilNou.Show();
+        }
+
+        private void cppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CPP contProfitPierdereNou = new CPP();
+            contProfitPierdereNou.Show();
+        }
+
+        private void modificaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ContProfitPierdere.SelectedCells.Count > 0)
+            {
+                DataGridViewCell celulaSelectata = ContProfitPierdere.SelectedCells[0];
+
+                if (celulaSelectata.ColumnIndex == 1)
+                {
+                    Rectangle dreptunghiCelula = ContProfitPierdere.GetCellDisplayRectangle(celulaSelectata.ColumnIndex, celulaSelectata.RowIndex, true);
+
+                    using (Form modificaForm = new Form())
+                    {
+                        modificaForm.Size = new Size(200, 100);
+                        modificaForm.StartPosition = FormStartPosition.Manual;
+                        modificaForm.Location = ContProfitPierdere.PointToScreen(new Point(dreptunghiCelula.X, dreptunghiCelula.Y));
+
+                        TextBox textBox = new TextBox
+                        {
+                            Location = new Point(10, 10),
+                            Width = 160,
+                            Text = celulaSelectata.Value?.ToString()
+                        };
+
+                        textBox.KeyDown += (s, args) =>
+                        {
+                            if (args.KeyCode == Keys.Enter)
+                            {
+                                ConfirmValue();
+                                args.Handled = true;                       
+                            }
+                        };
+
+                        Button btnConfirmare = new Button
+                        {
+                            Text = "Confirma",
+                            Location = new Point(10, 40),
+                            Width = 160
+                        };
+
+                        btnConfirmare.Click += (s, args) =>
+                        {
+                            ConfirmValue();
+                        };
+
+                        void ConfirmValue()
+                        {
+                            if (double.TryParse(textBox.Text, out double newValue))
+                            {
+                                celulaSelectata.Value = newValue;
+                                modificaForm.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Introduceti o valoare numerica valida.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+
+                        modificaForm.Controls.Add(textBox);
+                        modificaForm.Controls.Add(btnConfirmare);
+                        modificaForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+                        modificaForm.MaximizeBox = false;
+                        modificaForm.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Modificarile sunt permise doar pentru coloana cu valori.", "Informatie", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

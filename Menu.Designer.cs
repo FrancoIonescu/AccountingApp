@@ -35,6 +35,7 @@
             this.bilantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Meniu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +77,8 @@
             this.Meniu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.Meniu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bilantToolStripMenuItem,
-            this.cppToolStripMenuItem});
+            this.cppToolStripMenuItem,
+            this.infoToolStripMenuItem});
             this.Meniu.Location = new System.Drawing.Point(0, 0);
             this.Meniu.Name = "Meniu";
             this.Meniu.Size = new System.Drawing.Size(800, 28);
@@ -86,14 +88,18 @@
             // bilantToolStripMenuItem
             // 
             this.bilantToolStripMenuItem.Name = "bilantToolStripMenuItem";
-            this.bilantToolStripMenuItem.Size = new System.Drawing.Size(61, 26);
+            this.bilantToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
+            this.bilantToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
             this.bilantToolStripMenuItem.Text = "Bilant";
+            this.bilantToolStripMenuItem.Click += new System.EventHandler(this.bilantToolStripMenuItem_Click);
             // 
             // cppToolStripMenuItem
             // 
             this.cppToolStripMenuItem.Name = "cppToolStripMenuItem";
-            this.cppToolStripMenuItem.Size = new System.Drawing.Size(48, 26);
+            this.cppToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this.cppToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
             this.cppToolStripMenuItem.Text = "CPP";
+            this.cppToolStripMenuItem.Click += new System.EventHandler(this.cppToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -104,6 +110,13 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Info";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.infoToolStripMenuItem.Text = "Info";
             // 
             // Menu
             // 
@@ -134,6 +147,7 @@
         private System.Windows.Forms.ToolStripMenuItem bilantToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cppToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
     }
 }
 

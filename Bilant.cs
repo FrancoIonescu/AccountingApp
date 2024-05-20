@@ -51,7 +51,6 @@ namespace Contabilitate
             BilantContabil.Rows.Add("IV. Rezerve");
             BilantContabil.Rows.Add("V. Profitul sau pierderea reportat/a");
             BilantContabil.Rows.Add("VI. Profitul sau pierderea exercitiului financiar");
-            BilantContabil.Rows[22].Height = 50;
             BilantContabil.Rows[0].Cells[1].Value = bilant.Active_imobilizate; 
             BilantContabil.Rows[1].Cells[1].Value = bilant.Imobilizari_corporale;
             BilantContabil.Rows[2].Cells[1].Value = bilant.Imobilizari_necorporale;
@@ -75,6 +74,11 @@ namespace Contabilitate
             BilantContabil.Rows[20].Cells[1].Value = bilant.Rezerve;
             BilantContabil.Rows[21].Cells[1].Value = bilant.Profit_pierdere_reportata;
             BilantContabil.Rows[22].Cells[1].Value = bilant.Profit_pierdere_curent;
+            BilantContabil.Rows[22].Height = 50;
+
+            bilantToolStripMenuItem.Text = "&Bilant";
+            cppToolStripMenuItem.Text = "&CPP";
+            infoToolStripMenuItem.Text = "&Info";
         }
 
         private void adauga_Click(object sender, EventArgs e)
@@ -357,6 +361,90 @@ namespace Contabilitate
                     }
                 }
             }
+        }
+
+        private void cmsModificaSuma_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (BilantContabil.SelectedCells.Count > 0)
+            {
+                DataGridViewCell celulaSelectata = BilantContabil.SelectedCells[0];
+
+                if (celulaSelectata.ColumnIndex == 1)
+                {
+                    Rectangle dreptunghiCelula = BilantContabil.GetCellDisplayRectangle(celulaSelectata.ColumnIndex, celulaSelectata.RowIndex, true);
+
+                    using (Form modificaForm = new Form())
+                    {
+                        modificaForm.Size = new Size(200, 100);
+                        modificaForm.StartPosition = FormStartPosition.Manual;
+                        modificaForm.Location = BilantContabil.PointToScreen(new Point(dreptunghiCelula.X, dreptunghiCelula.Y));
+
+                        TextBox textBox = new TextBox
+                        {
+                            Location = new Point(10, 10),
+                            Width = 160,
+                            Text = celulaSelectata.Value?.ToString()
+                        };
+
+                        textBox.KeyDown += (s, args) =>
+                        {
+                            if (args.KeyCode == Keys.Enter)
+                            {
+                                ConfirmValue();
+                                args.Handled = true;                          
+                            }
+                        };
+
+                        Button btnConfirmare = new Button
+                        {
+                            Text = "Confirma",
+                            Location = new Point(10, 40),
+                            Width = 160
+                        };
+
+                        btnConfirmare.Click += (s, args) =>
+                        {
+                            ConfirmValue();
+                        };
+
+                        void ConfirmValue()
+                        {
+                            if (double.TryParse(textBox.Text, out double newValue))
+                            {
+                                celulaSelectata.Value = newValue;
+                                modificaForm.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Introduceti o valoare numerica valida.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+
+
+                        modificaForm.Controls.Add(textBox);
+                        modificaForm.Controls.Add(btnConfirmare);
+                        modificaForm.FormBorderStyle = FormBorderStyle.FixedDialog;
+                        modificaForm.MaximizeBox = false;
+                        modificaForm.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Modificarile sunt permise doar pentru coloana cu valori.", "Informatie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void bilantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bilant bilantContabilNou = new Bilant();
+            bilantContabilNou.Show();
+        }
+
+        private void cppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CPP contProfitPierdereNou = new CPP();
+            contProfitPierdereNou.Show();
         }
     }
 }

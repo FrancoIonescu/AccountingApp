@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ContProfitPierdere = new System.Windows.Forms.DataGridView();
             this.elemente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +44,15 @@
             this.cbPreluare = new System.Windows.Forms.ComboBox();
             this.btnSalveaza = new System.Windows.Forms.Button();
             this.btnPreia = new System.Windows.Forms.Button();
+            this.msMenu = new System.Windows.Forms.MenuStrip();
+            this.bilantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsModificaSuma = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.modificaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ContProfitPierdere)).BeginInit();
+            this.msMenu.SuspendLayout();
+            this.cmsModificaSuma.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContProfitPierdere
@@ -55,6 +64,7 @@
             this.ContProfitPierdere.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.elemente,
             this.sume});
+            this.ContProfitPierdere.ContextMenuStrip = this.cmsModificaSuma;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -63,7 +73,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ContProfitPierdere.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ContProfitPierdere.Location = new System.Drawing.Point(2, -1);
+            this.ContProfitPierdere.Location = new System.Drawing.Point(0, 31);
             this.ContProfitPierdere.Name = "ContProfitPierdere";
             this.ContProfitPierdere.ReadOnly = true;
             this.ContProfitPierdere.RowHeadersWidth = 51;
@@ -199,6 +209,57 @@
             this.btnPreia.UseVisualStyleBackColor = true;
             this.btnPreia.Click += new System.EventHandler(this.btnPreia_Click);
             // 
+            // msMenu
+            // 
+            this.msMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bilantToolStripMenuItem,
+            this.cppToolStripMenuItem,
+            this.infoToolStripMenuItem});
+            this.msMenu.Location = new System.Drawing.Point(0, 0);
+            this.msMenu.Name = "msMenu";
+            this.msMenu.Size = new System.Drawing.Size(995, 28);
+            this.msMenu.TabIndex = 12;
+            this.msMenu.Text = "menuStrip1";
+            // 
+            // bilantToolStripMenuItem
+            // 
+            this.bilantToolStripMenuItem.Name = "bilantToolStripMenuItem";
+            this.bilantToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.B)));
+            this.bilantToolStripMenuItem.Size = new System.Drawing.Size(61, 24);
+            this.bilantToolStripMenuItem.Text = "Bilant";
+            this.bilantToolStripMenuItem.Click += new System.EventHandler(this.bilantToolStripMenuItem_Click);
+            // 
+            // cppToolStripMenuItem
+            // 
+            this.cppToolStripMenuItem.Name = "cppToolStripMenuItem";
+            this.cppToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this.cppToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.cppToolStripMenuItem.Text = "CPP";
+            this.cppToolStripMenuItem.Click += new System.EventHandler(this.cppToolStripMenuItem_Click);
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.infoToolStripMenuItem.Text = "Info";
+            // 
+            // cmsModificaSuma
+            // 
+            this.cmsModificaSuma.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsModificaSuma.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modificaToolStripMenuItem});
+            this.cmsModificaSuma.Name = "cmsModificaSuma";
+            this.cmsModificaSuma.Size = new System.Drawing.Size(211, 56);
+            // 
+            // modificaToolStripMenuItem
+            // 
+            this.modificaToolStripMenuItem.Name = "modificaToolStripMenuItem";
+            this.modificaToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.modificaToolStripMenuItem.Text = "Modifica";
+            this.modificaToolStripMenuItem.Click += new System.EventHandler(this.modificaToolStripMenuItem_Click);
+            // 
             // CPP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -216,9 +277,14 @@
             this.Controls.Add(this.tbSuma);
             this.Controls.Add(this.tbCont);
             this.Controls.Add(this.ContProfitPierdere);
+            this.Controls.Add(this.msMenu);
+            this.MainMenuStrip = this.msMenu;
             this.Name = "CPP";
             this.Text = "CPP";
             ((System.ComponentModel.ISupportInitialize)(this.ContProfitPierdere)).EndInit();
+            this.msMenu.ResumeLayout(false);
+            this.msMenu.PerformLayout();
+            this.cmsModificaSuma.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +306,11 @@
         private System.Windows.Forms.ComboBox cbPreluare;
         private System.Windows.Forms.Button btnSalveaza;
         private System.Windows.Forms.Button btnPreia;
+        private System.Windows.Forms.MenuStrip msMenu;
+        private System.Windows.Forms.ToolStripMenuItem bilantToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cppToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip cmsModificaSuma;
+        private System.Windows.Forms.ToolStripMenuItem modificaToolStripMenuItem;
     }
 }

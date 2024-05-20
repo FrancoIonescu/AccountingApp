@@ -19,6 +19,9 @@ namespace Contabilitate
             this.BackColor = Color.SeaGreen;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            bilantToolStripMenuItem.Text = "&Bilant";
+            cppToolStripMenuItem.Text = "&CPP";
+            infoToolStripMenuItem.Text = "&Info";
         }
 
         private void Bilant_Click(object sender, EventArgs e)
@@ -31,6 +34,18 @@ namespace Contabilitate
         {
             CPP cppForm = new CPP();
             cppForm.Show();
+        }
+
+        private void bilantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bilant bilantContabilNou = new Bilant();
+            bilantContabilNou.Show();
+        }
+
+        private void cppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CPP contProfitPierdereNou = new CPP();
+            contProfitPierdereNou.Show();
         }
     }
 }
