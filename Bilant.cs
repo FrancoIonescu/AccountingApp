@@ -20,7 +20,7 @@ namespace Contabilitate
         {
             InitializeComponent();
             this.Width = 800;
-            this.Height = 580;
+            this.Height = 550;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             Font font = new Font("Arial", 13, FontStyle.Regular);
@@ -99,7 +99,6 @@ namespace Contabilitate
                         BilantContabil.Rows[1].Cells[1].Value = bilant.Imobilizari_corporale;
                         BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;                    
                     }
@@ -113,7 +112,6 @@ namespace Contabilitate
                         BilantContabil.Rows[2].Cells[1].Value = bilant.Imobilizari_necorporale;
                         BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;                      
                     }
@@ -127,7 +125,6 @@ namespace Contabilitate
                         BilantContabil.Rows[3].Cells[1].Value = bilant.Imobilizari_financiare;
                         BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;                       
                     }
@@ -143,7 +140,6 @@ namespace Contabilitate
                         BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
                         BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -159,7 +155,6 @@ namespace Contabilitate
                         BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
                         BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -175,7 +170,6 @@ namespace Contabilitate
                         BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
                         BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -191,7 +185,6 @@ namespace Contabilitate
                         BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
                         BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -205,7 +198,6 @@ namespace Contabilitate
                         BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
                         BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -219,7 +211,6 @@ namespace Contabilitate
                         BilantContabil.Rows[11].Cells[1].Value = bilant.Active_circulante_nete;
                         BilantContabil.Rows[12].Cells[1].Value = bilant.Active_minus_datorii;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -229,7 +220,6 @@ namespace Contabilitate
                         bilant.Datorii_termen_lung += suma;
                         BilantContabil.Rows[13].Cells[1].Value = bilant.Datorii_termen_lung;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -239,7 +229,6 @@ namespace Contabilitate
                         bilant.Venituri_in_avans += suma;
                         BilantContabil.Rows[14].Cells[1].Value = bilant.Venituri_in_avans;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -251,7 +240,6 @@ namespace Contabilitate
                         BilantContabil.Rows[16].Cells[1].Value = bilant.Capital_si_rezerve;
                         BilantContabil.Rows[17].Cells[1].Value = bilant.Capital;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -263,7 +251,6 @@ namespace Contabilitate
                         BilantContabil.Rows[16].Cells[1].Value = bilant.Capital_si_rezerve;
                         BilantContabil.Rows[18].Cells[1].Value = bilant.Prime_de_capital;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -275,7 +262,6 @@ namespace Contabilitate
                         BilantContabil.Rows[16].Cells[1].Value = bilant.Capital_si_rezerve;
                         BilantContabil.Rows[19].Cells[1].Value = bilant.Rezerve_din_reevaluare;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -287,7 +273,6 @@ namespace Contabilitate
                         BilantContabil.Rows[16].Cells[1].Value = bilant.Capital_si_rezerve;
                         BilantContabil.Rows[20].Cells[1].Value = bilant.Rezerve;
                         tbCont.Clear();
-                        cbTip.SelectedIndex = -1;
                         tbSuma.Clear();
                         suma = 0;
                     }
@@ -332,34 +317,41 @@ namespace Contabilitate
                     }
                 }
             }
-        }
-
-        private void btnPreia_Click(object sender, EventArgs e)
-        {
-            if (cbPreluare.Text == "binar")
+            if (cbSalvare.Text == "csv")
             {
-                OpenFileDialog fisierBinar = new OpenFileDialog();
-                fisierBinar.Filter = "Fisier binar (*.bin)|*.bin";
-                fisierBinar.Title = "Bilant Contabil";
-                if (fisierBinar.ShowDialog() == DialogResult.OK)
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Fișier CSV (*.csv)|*.csv";
+                saveFileDialog.Title = "Salvează bilantul contabil ca CSV";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    using (FileStream fileStream = new FileStream(fisierBinar.FileName, FileMode.Open))
+                    StringBuilder csvData = new StringBuilder();
+
+                    for (int i = 0; i < BilantContabil.Columns.Count; i++)
                     {
-                        BinaryFormatter binaryFormatter = new BinaryFormatter();
-                        List<object[]> loadedData = (List<object[]>)binaryFormatter.Deserialize(fileStream);
-
-                        BilantContabil.Rows.Clear();
-
-                        foreach (object[] rowData in loadedData)
+                        csvData.Append(BilantContabil.Columns[i].HeaderText);
+                        if (i < BilantContabil.Columns.Count - 1)
                         {
-                            BilantContabil.Rows.Add(rowData);
+                            csvData.Append(",");
                         }
-                        BilantContabil.Rows[7].Height = 50;
-                        BilantContabil.Rows[10].Height = 50;
-                        BilantContabil.Rows[13].Height = 50;
-                        BilantContabil.Rows[22].Height = 50;
                     }
-                }
+                    csvData.AppendLine();
+
+                    foreach (DataGridViewRow row in BilantContabil.Rows)
+                    {
+                        for (int i = 0; i < row.Cells.Count; i++)
+                        {
+                            csvData.Append(row.Cells[i].Value.ToString().Replace(",", ";"));
+                            if (i < row.Cells.Count - 1)
+                            {
+                                csvData.Append(",");
+                            }
+                        }
+                        csvData.AppendLine();
+                    }
+
+                        File.WriteAllText(saveFileDialog.FileName, csvData.ToString());
+                }   
             }
         }
 
@@ -446,5 +438,125 @@ namespace Contabilitate
             CPP contProfitPierdereNou = new CPP();
             contProfitPierdereNou.Show();
         }
+
+        private void incarcaDateDinFisierBinar(string filePath)
+        {
+            try
+            {
+                using (FileStream fileStream = new FileStream(filePath, FileMode.Open))
+                {
+                    BinaryFormatter binaryFormatter = new BinaryFormatter();
+                    List<object[]> dateIncarcate = (List<object[]>)binaryFormatter.Deserialize(fileStream);
+
+                    BilantContabil.Rows.Clear();
+
+                    foreach (object[] rowData in dateIncarcate)
+                    {
+                        BilantContabil.Rows.Add(rowData);
+                    }
+
+                    BilantContabil.Rows[7].Height = 50;
+                    BilantContabil.Rows[10].Height = 50;
+                    BilantContabil.Rows[13].Height = 50;
+                    BilantContabil.Rows[22].Height = 50;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Eroare la incarcarea datelor: {ex.Message}");
+            }
+        }
+
+        private void incarcaDateDinFisierCSV(string filePath)
+        {
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    BilantContabil.Rows.Clear();
+                    string[] header = reader.ReadLine().Split(',');
+                    foreach (string column in header)
+                    {
+                        if (!BilantContabil.Columns.Contains(column))
+                        {
+                            BilantContabil.Columns.Add(column, column);
+                        }
+                    }
+
+                    while (!reader.EndOfStream)
+                    {
+                        string[] row = reader.ReadLine().Split(',');
+                        for (int i = 0; i < row.Length; i++)
+                        {
+                            row[i] = row[i].Replace(";", ",");
+                        }
+                        BilantContabil.Rows.Add(row);
+                    }
+
+                    BilantContabil.Rows[7].Height = 50;
+                    BilantContabil.Rows[10].Height = 50;
+                    BilantContabil.Rows[13].Height = 50;
+                    BilantContabil.Rows[22].Height = 50;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Eroare la incarcarea datelor din CSV: {ex.Message}");
+            }
+        }
+
+
+        private void panelPreluare_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            if (files != null && files.Length > 0)
+            {
+                string filePath = files[0];
+                string extension = Path.GetExtension(filePath).ToLower();
+
+                if (extension == ".bin")
+                {
+                    incarcaDateDinFisierBinar(filePath);
+                }
+                else if (extension == ".csv")
+                {
+                    incarcaDateDinFisierCSV(filePath);
+                }
+                else
+                {
+                    MessageBox.Show("Fisierul nu este acceptat!");
+                }
+            }
+        }
+
+        private void panelPreluare_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files != null && files.Length > 0)
+                {
+                    string filePath = files[0];
+                    string extension = Path.GetExtension(filePath).ToLower();
+                    if (extension == ".bin" || extension == ".csv")
+                    {
+                        e.Effect = DragDropEffects.Copy;
+                    }
+                    else
+                    {
+                        e.Effect = DragDropEffects.None;
+                    }
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
     }
 }

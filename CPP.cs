@@ -19,7 +19,7 @@ namespace Contabilitate
         {
             InitializeComponent();
             this.Width = 750;
-            this.Height = 435;
+            this.Height = 465;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             Font font = new Font("Arial", 13, FontStyle.Regular);
@@ -180,33 +180,41 @@ namespace Contabilitate
                     }
                 }
             }
-        }
-
-        private void btnPreia_Click(object sender, EventArgs e)
-        {
-            if (cbPreluare.Text == "binar")
+            if (cbSalvare.Text == "csv")
             {
-                OpenFileDialog fisierBinar = new OpenFileDialog();
-                fisierBinar.Filter = "Fisier binar (*.bin)|*.bin";
-                fisierBinar.Title = "CPP";
-                if (fisierBinar.ShowDialog() == DialogResult.OK)
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Fișier CSV (*.csv)|*.csv";
+                saveFileDialog.Title = "Salvează contul de profit si pierdere ca CSV";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    using (FileStream fileStream = new FileStream(fisierBinar.FileName, FileMode.Open))
+                    StringBuilder csvData = new StringBuilder();
+
+                    // Adaugă antetul coloanelor
+                    for (int i = 0; i < ContProfitPierdere.Columns.Count; i++)
                     {
-                        BinaryFormatter binaryFormatter = new BinaryFormatter();
-                        List<object[]> loadedData = (List<object[]>)binaryFormatter.Deserialize(fileStream);
-
-                        ContProfitPierdere.Rows.Clear();
-
-                        foreach (object[] rowData in loadedData)
+                        csvData.Append(ContProfitPierdere.Columns[i].HeaderText);
+                        if (i < ContProfitPierdere.Columns.Count - 1)
                         {
-                            ContProfitPierdere.Rows.Add(rowData);
+                            csvData.Append(",");
                         }
-                        ContProfitPierdere.Rows[2].Height = 50;
-                        ContProfitPierdere.Rows[5].Height = 50;
-                        ContProfitPierdere.Rows[9].Height = 50;
-                        ContProfitPierdere.Rows[10].Height = 50;
                     }
+                    csvData.AppendLine();
+
+                    foreach (DataGridViewRow row in ContProfitPierdere.Rows)
+                    {
+                        for (int i = 0; i < row.Cells.Count; i++)
+                        {
+                            csvData.Append(row.Cells[i].Value.ToString().Replace(",", ";"));
+                            if (i < row.Cells.Count - 1)
+                            {
+                                csvData.Append(",");
+                            }
+                        }
+                        csvData.AppendLine();
+                    }
+
+                    File.WriteAllText(saveFileDialog.FileName, csvData.ToString());
                 }
             }
         }
@@ -294,5 +302,125 @@ namespace Contabilitate
                 }
             }
         }
+
+        private void incarcaDateDinFisierBinar(string filePath)
+        {
+            try
+            {
+                using (FileStream fileStream = new FileStream(filePath, FileMode.Open))
+                {
+                    BinaryFormatter binaryFormatter = new BinaryFormatter();
+                    List<object[]> dateIncarcate = (List<object[]>)binaryFormatter.Deserialize(fileStream);
+
+                    ContProfitPierdere.Rows.Clear();
+
+                    foreach (object[] rowData in dateIncarcate)
+                    {
+                        ContProfitPierdere.Rows.Add(rowData);
+                    }
+
+                    ContProfitPierdere.Rows[2].Height = 50;
+                    ContProfitPierdere.Rows[5].Height = 50;
+                    ContProfitPierdere.Rows[9].Height = 50;
+                    ContProfitPierdere.Rows[10].Height = 50;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Eroare la incarcarea datelor: {ex.Message}");
+            }
+        }
+
+        private void incarcaDateDinFisierCSV(string filePath)
+        {
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    ContProfitPierdere.Rows.Clear();
+                    string[] header = reader.ReadLine().Split(',');
+                    foreach (string column in header)
+                    {
+                        if (!ContProfitPierdere.Columns.Contains(column))
+                        {
+                            ContProfitPierdere.Columns.Add(column, column);
+                        }
+                    }
+
+                    while (!reader.EndOfStream)
+                    {
+                        string[] row = reader.ReadLine().Split(',');
+                        for (int i = 0; i < row.Length; i++)
+                        {
+                            row[i] = row[i].Replace(";", ",");
+                        }
+                        ContProfitPierdere.Rows.Add(row);
+                    }
+
+                    ContProfitPierdere.Rows[2].Height = 50;
+                    ContProfitPierdere.Rows[5].Height = 50;
+                    ContProfitPierdere.Rows[9].Height = 50;
+                    ContProfitPierdere.Rows[10].Height = 50;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Eroare la incarcarea datelor din CSV: {ex.Message}");
+            }
+        }
+
+        private void panelPreluare_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            if (files != null && files.Length > 0)
+            {
+                string filePath = files[0];
+                string extension = Path.GetExtension(filePath).ToLower();
+
+                if (extension == ".bin")
+                {
+                    incarcaDateDinFisierBinar(filePath);
+                }
+                else if (extension == ".csv")
+                {
+                    incarcaDateDinFisierCSV(filePath);
+                }
+                else
+                {
+                    MessageBox.Show("Fisierul nu este acceptat!");
+                }
+            }
+        }
+
+        private void panelPreluare_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                if (files != null && files.Length > 0)
+                {
+                    string filePath = files[0];
+                    string extension = Path.GetExtension(filePath).ToLower();
+                    if (extension == ".bin" || extension == ".csv")
+                    {
+                        e.Effect = DragDropEffects.Copy;
+                    }
+                    else
+                    {
+                        e.Effect = DragDropEffects.None;
+                    }
+                }
+                else
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+
     }
 }
